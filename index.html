@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <title>Steak House</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            clifford: '#da373d',
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+
+<body class="bg-gradient-to-r from-[#6b1d24] via-[#4a141a] to-[#6b1d24] font-sans">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white/30 backdrop-blur-md shadow-lg rounded-lg z-10">
+
+        <img src="/resources/Img/milogo-sinfondo.ico" alt="Logo" class="w-22 h-12">
+
+        <div class="text-xl text-[#f5f0e6] hidden md:block">Steak House espera por ti!</div>
+
+        <button id="menuToggle" class="md:hidden text-[#f5f0e6] focus:outline-none">
+            ☰
+        </button>
+        <div id="navLinks" class="hidden md:flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 absolute md:static top-16 left-0 w-full md:w-auto p-4 md:p-0 rounded-lg md:rounded-none   ">
+            <button id="BtnMenu" class="px-4 py-2 bg-white/10 backdrop-blur-sm shadow-lg text-[#f5f0e6] rounded-lg hover:bg-white/20 transition-colors">Menú</button>
+            <button id="BtnSobreNosotros" class="px-4 py-2 bg-white/10 backdrop-blur-sm shadow-lg text-[#f5f0e6] rounded-lg hover:bg-white/20 transition-colors">Sobre Nosotros</button>
+            <button id="BtnContacto" class="px-4 py-2 bg-white/10 backdrop-blur-sm shadow-lg text-[#f5f0e6] rounded-lg hover:bg-white/20 transition-colors">Contáctanos</button>
+        </div>
+    </nav>
+
+    <!-- Banner de imágenes -->
+    <section class="relative overflow-hidden mt-4">
+        <div id="slider" class="flex transition-transform duration-700 ease-in-out mt-20">
+            <img src="/resources/banner/foto1.jpg" alt="Imagen 1" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto2.jpg" alt="Imagen 2" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto3.png" alt="Imagen 3" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto4.jpg" alt="Imagen 4" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto5.jpg" alt="Imagen 5" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto6.jpg" alt="Imagen 6" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto7.jpg" alt="Imagen 7" class="w-1/2 h-64 object-cover flex-shrink-0">
+            <img src="/resources/banner/foto8.png" alt="Imagen 8" class="w-1/2 h-64 object-cover flex-shrink-0">
+        </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section id="SobreNosotros" class="flex flex-col items-center p-8 animate__animated animate__fadeIn">
+        <div class="flex flex-col md:flex-row bg-white/30 backdrop-blur-md shadow-lg rounded-lg" >
+            <img src="/resources/Img/milogo-sinfondo.png" alt="Restaurant" class="w-full md:w-1/2 object-cover w-30 h-30">
+            <div class="p-6 mt-14">
+                <h1 class="text-4xl text-[#f5f0e6] font-bold mb-4">TE DAMOS LA BIENVENIDA</h1>
+                <h2 class="text-2xl text-[#f5f0e6] mb-4">Disfruta de la mejor gastronomía</h2>
+                <p class="mb-6 text-[#f5f0e6] ">Sumérgete en una experiencia culinaria única, donde tradición y creatividad se fusionan en cada plato. En Steak House, no solo servimos comida, creamos momentos inolvidables. Desde entradas exquisitas hasta postres irresistibles, cada bocado está diseñado para deleitar tus sentidos.<br>
+
+                    ✨ Sabores auténticos. Ambiente acogedor. Momentos memorables.<br>
+                    ¡Ven y descubre por qué Dinner Restaurante es el lugar donde los sabores cobran vida! 💫</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú -->
+    <section id="Menu" class="p-8">
+        <h2 class="text-3xl font-bold text-[#f5f0e6] mb-6 text-center">Menú</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Platillo 1 -->
+            <div class="bg-white/30 backdrop-blur-md text-[#f5f0e6] shadow-lg rounded-lg p-4 cursor-pointer hover:bg-[#6b6b6b]" onclick="selectDish('Chicken salad - $13.00', this)">
+                <img src="/resources/Img/plato (1).png" alt="chicken salad" class="rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">Chicken salad</h3>
+                <p class="text-beige-100">$13.00</p>
+            </div>
+
+            <!-- Platillo 2 -->
+            <div class="bg-white/30 backdrop-blur-md text-[#f5f0e6] shadow-lg rounded-lg p-4 cursor-pointer hover:bg-[#6b6b6b]" onclick="selectDish('Assorted dish - $12.00', this)">
+                <img src="/resources/Img/plato(2).png" alt="Assorted dish" class="rounded-lg mt-7 mb-12">
+                <h3 class="text-xl text-[#f5f0e6] font-semibold mt-4">Assorted dish</h3>
+                <p class="text-beige-100">$12.00</p>
+            </div>
+
+            <!-- Platillo 3 -->
+            <div class="bg-white/30 backdrop-blur-md text-[#f5f0e6] shadow-lg rounded-lg p-4 cursor-pointer hover:bg-[#6b6b6b]" onclick="selectDish('Eggs salad - $10.00', this)">
+                <img src="/resources/Img/plato (3).png" alt="Eggs salad" class="rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">Eggs salad</h3>
+                <p class="text-beige-100">$10.00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contáctanos -->
+    <section id="Contacto" class="p-8 text-[#f5f0e6] flex justify-center items-center min-h-screen mt-4">
+        <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-lg p-8 w-full max-w-lg">
+            <h2 class="text-3xl font-bold mb-8 text-center">Contáctanos</h2>
+            <form id="contactForm" class="space-y-6">
+                <div>
+                    <label for="message" class="block text-lg font-medium">¿Cuéntanos qué desea ordenar?</label>
+                    <textarea id="message" rows="4" class="w-full p-2 border-[#f5f0e6] rounded text-[#f5f0e6] bg-black/30 placeholder-gray-400" placeholder="Hola! Quiero ordenar..." required></textarea>
+                </div>
+                <!-- Cambio clave: block + margen superior -->
+                <a id="whatsappButton" href="#" target="_blank" class="block mt-6 text-center px-6 py-3 bg-white/20 backdrop-blur-md shadow-lg text-[#f5f0e6] rounded-lg hover:bg-white/40 transition-all">
+                    Enviar WhatsApp
+                </a>
+            </form>
+        </div>
+    </section>
+
+    <footer class="flex justify-center items-center p-4 bg-white/30 backdrop-blur-md shadow-lg rounded-lg mt-8">
+        <div class="text-sm text-[#f5f0e6] mr-4">Creador Joserraul Mundaray</div>
+        <div class="flex space-x-4">
+            <a href="https://www.instagram.com/joserraulm/" target="_blank">
+                <img src="/resources/Img/instagram-line.svg" alt="Instagram" class="w-6 h-6 text-[#f5f0e6] hover:text-[#f5f0e6]">
+            </a>
+            <a href="https://github.com/Joserraul" target="_blank">
+                <img src="/resources/Img/github-fill.svg" alt="GitHub" class="w-6 h-6 text-[#f5f0e6] hover:text-[#f5f0e6]">
+            </a>
+            <a href="https://wa.me/+584248973345" target="_blank">
+                <img src="/resources/Img/whatsapp-line.svg" alt="WhatsApp" class="w-6 h-6 text-[#f5f0e6] hover:text-[#f5f0e6]">
+            </a>
+        </div>
+    </footer>
+
+    <script src="/page/script.js"></script>
+
+</body>
+</html>
